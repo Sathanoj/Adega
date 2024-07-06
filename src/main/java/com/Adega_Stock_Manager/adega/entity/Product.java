@@ -15,5 +15,15 @@ public class Product {
     private Long id;
     private String nome;
     private String cod_barra;
-    private float valor;
+    private float valor_compra;
+    private float valor_venda;
+    private String validade;
+
+    public Product(){}
+
+    public Product(String nome, String cod_barra, String validade) {
+        this.nome = nome;
+        this.cod_barra = cod_barra;
+        this.validade = validade;
+    }
 }
