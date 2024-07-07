@@ -5,6 +5,6 @@ import com.Adega_Stock_Manager.adega.entity.Product;
 import java.util.List;
 
 public interface ProductService {
-    Product saveProduct();
+    Product saveProduct(Product product);
     List<Product> getAllProducts();
 }

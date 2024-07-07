@@ -13,12 +13,12 @@ public class ProductServiceImplement implements ProductService {
     ProductRepository productRepository;
 
     @Override
-    public Product saveProduct() {
-        return null;
+    public Product saveProduct(Product product) {
+        return productRepository.save(product);
     }
 
     @Override
     public List<Product> getAllProducts() {
-        return List.of();
+        return productRepository.findAll();
     }
 }
