@@ -13,12 +13,32 @@ public class ProductServiceImplement implements ProductService {
     ProductRepository productRepository;
 
     @Override
+    public List<Product> getAllProducts() {
+        return productRepository.findAll();
+    }
+
+    @Override
+    public Product findById(Long id) {
+        return productRepository.findById(id).get();
+    }
+
+    @Override
     public Product saveProduct(Product product) {
         return productRepository.save(product);
     }
 
     @Override
-    public List<Product> getAllProducts() {
-        return productRepository.findAll();
+    public Product updateProduct(Product product, Long id) {
+        Product forUpdate = findById(id);
+        forUpdate.setNome(product.getNome());
+        forUpdate.setCod_barra(product.getCod_barra());
+        forUpdate.setValidade(product.getValidade());
+        return productRepository.save(forUpdate);
     }
+
+    @Override
+    public void deleteProduct(Product product) {
+        productRepository.delete(product);
+    }
+
 }

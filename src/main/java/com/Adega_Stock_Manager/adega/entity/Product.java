@@ -2,8 +2,11 @@ package com.Adega_Stock_Manager.adega.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table
 public class Product {
