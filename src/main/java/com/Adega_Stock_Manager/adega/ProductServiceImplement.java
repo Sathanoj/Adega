@@ -19,12 +19,15 @@ public class ProductServiceImplement implements ProductService {
 
     @Override
     public Product findById(Long id) {
-        return productRepository.findById(id).get();
+        if(productRepository.findById(id).isPresent()) {
+            return productRepository.findById(id).get();
+        }
+        return null;
     }
 
     @Override
     public Product saveProduct(Product product) {
-        return productRepository.save(product);
+            return productRepository.save(product);
     }
 
     @Override

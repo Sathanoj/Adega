@@ -1,14 +1,12 @@
 package com.Adega_Stock_Manager.adega.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-@Table
 public class Product {
 
     @Id
@@ -20,11 +18,4 @@ public class Product {
     private float valor_venda;
     private String validade;
 
-    public Product(){}
-
-    public Product(String nome, String cod_barra, String validade) {
-        this.nome = nome;
-        this.cod_barra = cod_barra;
-        this.validade = validade;
-    }
 }
